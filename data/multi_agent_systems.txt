@@ -1,0 +1,12 @@
+Multi-agent LLM systems decompose a complex task across several specialized agents
+that each handle one responsibility: planning, retrieval, synthesis, critique, and
+final reporting. Frameworks such as LangGraph model this as a directed graph of nodes
+and edges, where each node is a function (often an LLM call) and edges route state
+between nodes, including conditional edges that implement loops such as
+self-reflection: an evaluator agent inspects a draft output and routes execution back
+to an earlier node if the draft is insufficient, or forward to a finalization node if
+it passes. CrewAI takes a similar role-based approach but with a lighter-weight,
+opinionated API oriented around named roles and tasks, trading some flexibility for
+faster setup. Both approaches typically enforce structured outputs, for example with
+Pydantic schemas, so that state passed between agents is type-checked and malformed
+outputs are caught immediately rather than causing silent downstream failures.

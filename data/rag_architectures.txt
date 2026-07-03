@@ -1,0 +1,12 @@
+Retrieval-Augmented Generation (RAG) combines a retriever and a generator to ground
+large language model outputs in external knowledge. A typical RAG pipeline ingests
+documents, splits them into chunks, embeds each chunk into a vector, and stores the
+vectors in a vector database such as Pinecone, ChromaDB, Weaviate, or FAISS. At query
+time the user question is embedded with the same model, the vector store returns the
+most similar chunks by cosine similarity, and those chunks are inserted into the LLM
+prompt as grounding context. This reduces hallucination because the model is answering
+from retrieved evidence rather than parametric memory alone. Hybrid retrieval, which
+combines sparse methods like BM25 with dense vector search and merges results using
+Reciprocal Rank Fusion, generally improves retrieval relevance over either method alone,
+particularly for queries containing rare keywords, product codes, or proper nouns that
+dense embeddings can under-represent.

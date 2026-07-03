@@ -1,0 +1,14 @@
+Vector databases store high-dimensional embeddings and support approximate nearest
+neighbor search at scale. Pinecone is a fully managed, serverless vector database
+priced per read/write unit and storage, well suited to production workloads that need
+low operational overhead and automatic scaling, but it introduces a network dependency
+and ongoing cost per query. ChromaDB is open source and can run embedded in a Python
+process or as a lightweight server, which makes it attractive for prototypes and
+smaller production deployments, though it requires the team to manage persistence and
+scaling itself. FAISS, developed by Meta, is a library rather than a database: it is
+extremely fast for in-memory similarity search and is free to use, but it has no
+built-in persistence, metadata filtering, or multi-tenant access control, so teams
+typically wrap it with their own storage and serving layer. Weaviate offers built-in
+hybrid search and a GraphQL API and can be self-hosted or used as a managed cloud
+service, positioning it between Pinecone's fully managed model and FAISS's raw library
+approach.

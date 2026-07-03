@@ -1,0 +1,12 @@
+Production LLM applications incur cost along three axes: token usage for the base
+model, embedding generation for ingestion and queries, and vector database
+read/write/storage costs. A common pattern to control cost is semantic caching, where
+previously answered queries or previously retrieved contexts are cached by embedding
+similarity so that near-duplicate questions are served from cache instead of
+re-invoking the model or the retriever. Rate limiting and request batching are also
+used to stay within API provider quotas and to amortize fixed request overhead.
+For scaling beyond a single-process prototype, teams typically move the retriever and
+generator behind a stateless API layer such as FastAPI, deploy multiple replicas behind
+a load balancer, and move the vector index to a managed service such as Pinecone or a
+horizontally scalable self-hosted cluster so that retrieval latency does not degrade as
+the document corpus and request volume grow.
