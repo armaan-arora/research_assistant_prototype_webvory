@@ -158,7 +158,7 @@ mode is active.
 
 ## 7. Demo Video
 
-📺 **[Demo video link — add after recording]**
+📺 **Demo video - https://drive.google.com/file/d/1dQmINSpQexGcEfsG2Ctg5BhXq890uEcA/view?usp=sharing**
 
 ---
 
