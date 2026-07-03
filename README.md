@@ -9,6 +9,8 @@ Built with **LangGraph + LangChain-core + OpenAI API**, matching the stack used
 in the accompanying resume's "AI Research Agent" and "Intelligent Study
 Assistant" projects.
 
+🔗 **Repository:** [github.com/armaan-arora/research_assistant_prototype_webvory](https://github.com/armaan-arora/research_assistant_prototype_webvory)
+
 ---
 
 ## 1. Project Overview
@@ -106,8 +108,8 @@ real Pinecone, ChromaDB, or FAISS backend would — swapping the backend is a
 
 ```bash
 # 1. Clone the repo and enter the project folder
-git clone <your-repo-url>
-cd research_assistant
+git clone https://github.com/armaan-arora/research_assistant_prototype_webvory.git
+cd research_assistant_prototype_webvory
 
 # 2. Create and activate a virtual environment
 python -m venv .venv
@@ -158,33 +160,22 @@ mode is active.
 
 📺 **[Demo video link — add after recording]**
 
-*Suggested walkthrough:* run `streamlit run app_streamlit.py`, submit a sample
-question, and narrate each agent's output as it appears (Planner's sub-questions
-→ Retriever's sources → Synthesizer's draft → Evaluator's revision check →
-Reporter's final report).
-
 ---
 
 ## 8. Screenshots
 
-*Add screenshots here after running the app, e.g.:*
-
-- `screenshots/streamlit-ui.png` — main Streamlit interface with a sample query
-- `screenshots/cli-output.png` — terminal output from `python main.py`
-- `screenshots/api-response.png` — sample JSON response from the `/research` endpoint
-
-```markdown
-![Streamlit UI](screenshots/streamlit-ui.png)
-![CLI output](screenshots/cli-output.png)
-![API response](screenshots/api-response.png)
-```
+![Home page](docs/screenshots/home_page.png)
+![Agent outputs](docs/screenshots/agent_outputs.png)
+![Reflection loop](docs/screenshots/Reflection_loop.png)
+![Final report](docs/screenshots/final_report.png)
+![Conclusion](docs/screenshots/conclusion.png)
 
 ---
 
 ## 9. Folder Structure
 
 ```
-research_assistant/
+research_assistant_prototype_webvory/
 ├── agents/
 │   ├── planner.py            # sub-question decomposition
 │   ├── retriever.py          # vector store queries per sub-question
@@ -196,12 +187,21 @@ research_assistant/
 │   ├── llm_client.py          # OpenAI wrapper + offline fallback
 │   └── vector_store.py        # pluggable TF-IDF vector store
 ├── data/                       # sample knowledge base (.txt files)
-├── screenshots/                # demo screenshots (add your own)
-├── graph.py                     # LangGraph StateGraph wiring + reflection loop
-├── main.py                       # CLI entrypoint
+├── docs/
+│   ├── screenshots/            # demo screenshots
+│   │   ├── home_page.png
+│   │   ├── agent_outputs.png
+│   │   ├── Reflection_loop.png
+│   │   ├── final_report.png
+│   │   └── conclusion.png
+│   ├── architecture_diagram.png
+│   └── recommendation_report.pdf   # Part 1-3 research & recommendation report
+├── tests/                       # unit / integration tests
 ├── api.py                        # FastAPI service
 ├── app_streamlit.py               # Streamlit demo UI
-├── architecture_diagram.png       # workflow/architecture diagram
+├── graph.py                        # LangGraph StateGraph wiring + reflection loop
+├── main.py                          # CLI entrypoint
+├── architecture_diagram.png          # root copy, referenced by README
 ├── requirements.txt
 ├── .env.example
 ├── .gitignore
